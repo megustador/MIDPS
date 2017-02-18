@@ -1,1 +1,13 @@
-readme
+*Pe GitHub:
+
+- In MIDPS repository am creat mapa Lab-1
+- am creat readme file
+
+*In Git Bash:
+
+1. Am configurat accountul GitHub git config --global user.name si git config --global "email_adress"
+2. Am facut copie la MIDPS repository la mine pe local cu comanda git clone repo_url
+3. Cu comanda git add am adaugat Raport1.pdf in mapa Lab-1
+4. Cu git commit -m am facut commitul necesar
+5. git push -u origin master 
+6. git status am verificat daca totul e ok.

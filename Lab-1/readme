@@ -11,3 +11,5 @@
 4. Cu git commit -m am facut commitul necesar
 5. git push -u origin master 
 6. git status am verificat daca totul e ok.
+7. Am creat 2 branchuri cu comanda git branch "name" (MySecondBranch, omg)
+8. Am facut cite un commit pe ambele branchuri

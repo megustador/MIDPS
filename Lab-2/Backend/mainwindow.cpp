@@ -53,15 +53,21 @@ void MainWindow::digit_pressed()
     {
         labelNumber =  button->text().toDouble();
         userSecondNumber = true;
+        newLabel = QString::number(labelNumber,'g',10);
     }
     else
     {
+        if (ui->label->text().contains('.') && button->text() == "0")
+        {
+            newLabel = ui->label->text() + button->text();
+        }
+        else
+        {
+           labelNumber = (ui->label->text() + button->text()).toDouble();
+           newLabel = QString::number(labelNumber,'g',10);
+        }
 
-        labelNumber = (ui->label->text() + button->text()).toDouble();
     }
-
-
-    newLabel = QString::number(labelNumber,'g',10);
 
     ui->label->setText(newLabel);
 }
@@ -156,4 +162,15 @@ void MainWindow::binary_operation_pressed()
 
     button->setChecked(true);
 
+}
+
+void MainWindow::on_pushButton_clear_released()
+{
+    ui->pushButton_plus->setChecked(false);
+    ui->pushButton_minus->setChecked(false);
+    ui->pushButton_divide->setChecked(false);
+    ui->pushButton_multiplication->setChecked(false);
+
+    userSecondNumber = false;
+    ui->label->setText("0");
 }

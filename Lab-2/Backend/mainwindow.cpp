@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+
 double firstNum;
 bool userSecondNumber = false;
 
@@ -28,12 +29,15 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->pushButton_plus,SIGNAL(released()),this,SLOT(binary_operation_pressed()));
     connect(ui->pushButton_divide,SIGNAL(released()),this,SLOT(binary_operation_pressed()));
     connect(ui->pushButton_multiplication,SIGNAL(released()),this,SLOT(binary_operation_pressed()));
+    connect(ui->pushButton_radical,SIGNAL(released()),this,SLOT(radical_released()));
+
 
 
     ui->pushButton_multiplication->setCheckable(true);
     ui->pushButton_minus->setCheckable(true);
     ui->pushButton_plus->setCheckable(true);
     ui->pushButton_divide->setCheckable(true);
+    ui->pushButton_radical->setCheckable(true);
 }
 
 MainWindow::~MainWindow()
@@ -148,7 +152,9 @@ void MainWindow::on_pushButton_equal_released()
         newLabel = QString::number(labelNumber,'g',15);
         ui->label->setText(newLabel);
         ui->pushButton_divide->setChecked(false);
+
     }
+
 
     userSecondNumber = false;
 
@@ -173,4 +179,19 @@ void MainWindow::on_pushButton_clear_released()
 
     userSecondNumber = false;
     ui->label->setText("0");
+}
+
+
+void MainWindow::on_pushButton_radical_released()
+{
+    double  firstNum, labelNumber;
+    QString newLabel;
+
+    firstNum = ui->label->text().toDouble();
+
+    labelNumber = sqrt(firstNum);
+    newLabel = QString::number(labelNumber,'g',15);
+    ui->label->setText(newLabel);
+    ui->pushButton_radical->setChecked(false);
+
 }

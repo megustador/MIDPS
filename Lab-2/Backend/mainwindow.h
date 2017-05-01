@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QtCore/qmath.h>
 
 namespace Ui {
 class MainWindow;
@@ -27,6 +28,8 @@ private slots:
     void binary_operation_pressed();
 
     void on_pushButton_clear_released();
+
+    void on_pushButton_radical_released();
 };
 
 #endif // MAINWINDOW_H

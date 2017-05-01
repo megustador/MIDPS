@@ -7,6 +7,9 @@ framework cu ajutorul caruia am crea GUI-ul.
 QT Creator este compatibil cu C++, JavaScript, Python.
 
 Pentru a testa aplicatia da-ti download la fisierul "install.rar" dupa care dublu click pe "install.exe"
+
+In caz ca nu merge install.exe incercati fisierul "Download.rar"
+
 *Am facut split la proiect in 2 parti.
 
 *Am uitat sa adaug functia de ridicare la patrat! 
